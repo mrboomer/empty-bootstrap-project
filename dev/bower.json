@@ -1,0 +1,17 @@
+{
+	"name": "Empty Bootstrap Project",
+	"version": "0.1.0",
+	"authors": [
+		"Daniel Escobedo <daniel@escobedo.io>"
+	],
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components"
+	],
+	"dependencies": {
+		"jquery": "~2.1.3",
+		"bootstrap": "~3.3.2"
+	}
+}
