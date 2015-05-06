@@ -93,9 +93,9 @@ gulp.task('styles', function() {
     .pipe( minify({ keepSpecialComments: 0 }) )
     .pipe( gulp.dest(paths.styles.dest) )
     .pipe( notify({
-    title: 'Gulp',
-    message: 'Styles Task Successful'
-  }) );
+      title: 'Gulp',
+      message: 'Styles Task Successful'
+    }) );
 });
 
 gulp.task('scripts', function() {
@@ -132,7 +132,7 @@ gulp.task('images', function() {
 gulp.task('watch', function() {
   'use strict';
   reload.listen();
-  gulp.watch(devAssets.styles, ['styles']).on('change', reload.changed);
+  gulp.watch(paths.styles.src + '**/*.scss', ['styles']).on('change', reload.changed);
   gulp.watch(devAssets.scripts, ['scripts']).on('change', reload.changed);
   gulp.watch(devAssets.images, ['images']).on('change', reload.changed);
 });
