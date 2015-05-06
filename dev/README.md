@@ -1,3 +1,9 @@
+##Bower
+
+bower install jquery --save
+bower install bootstrap --save
+
+
 ##Gulp
 
 npm install gulp --save-dev
