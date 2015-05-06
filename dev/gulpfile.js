@@ -44,17 +44,19 @@ var devAssets = {
 };
 
 function onError(err) {
+  'use strict';
   console.error('Error!', err.message);
-  this.emit('end');
 }
 
 gulp.task('bower', function() {
+  'use strict';
   return bower()
     .pipe( gulp.dest(basePaths.bower) )
     .pipe( plumber({ errorHandler: onError }) );
 });
 
 gulp.task('jquery', function() {
+  'use strict';
   return gulp.src( basePaths.bower + 'jquery/dist/jquery.js' )
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( uglify() )
@@ -63,6 +65,7 @@ gulp.task('jquery', function() {
 });
 
 gulp.task('bootstrapStyle', function() {
+  'use strict';
   return gulp.src( basePaths.bower + 'bootstrap/dist/css/bootstrap.css' )
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4') )
@@ -72,6 +75,7 @@ gulp.task('bootstrapStyle', function() {
 });
 
 gulp.task('bootstrapScript', function() {
+  'use strict';
   return gulp.src( basePaths.bower + 'bootstrap/dist/js/bootstrap.js' )
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( uglify() )
@@ -80,6 +84,7 @@ gulp.task('bootstrapScript', function() {
 });
 
 gulp.task('styles', function() {
+  'use strict';
   return sass( devAssets.styles, { style: 'expanded' } )
     .on( 'error', onError )
     .pipe( autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4') )
@@ -94,6 +99,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
+  'use strict';
   return gulp.src( devAssets.scripts )
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( jshint('.jshintrc') )
@@ -108,6 +114,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('images', function() {
+  'use strict';
   return gulp.src( devAssets.images )
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( cache(imagemin({
@@ -123,6 +130,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('watch', function() {
+  'use strict';
   reload.listen();
   gulp.watch(devAssets.styles, ['styles']).on('change', reload.changed);
   gulp.watch(devAssets.scripts, ['scripts']).on('change', reload.changed);
