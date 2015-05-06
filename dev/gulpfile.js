@@ -44,7 +44,7 @@ var devAssets = {
 };
 
 function onError(err) {
-  console.log(err);
+  console.error('Error!', err.message);
   this.emit('end');
 }
 
@@ -81,16 +81,16 @@ gulp.task('bootstrapScript', function() {
 
 gulp.task('styles', function() {
   return sass( devAssets.styles, { style: 'expanded' } )
-    .pipe( plumber({ errorHandler: onError }) )
+    .on( 'error', onError )
     .pipe( autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4') )
-    .pipe( gulp.dest(paths.styles.expanded) )
+    .pipe( gulp.dest(paths.styles.unminified) )
     .pipe( rename({suffix: '.min'}) )
     .pipe( minify({ keepSpecialComments: 0 }) )
     .pipe( gulp.dest(paths.styles.dest) )
     .pipe( notify({
-        title: 'Gulp',
-        message: 'Styles Task Successful'
-    }) );
+    title: 'Gulp',
+    message: 'Styles Task Successful'
+  }) );
 });
 
 gulp.task('scripts', function() {
