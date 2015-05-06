@@ -104,7 +104,7 @@ gulp.task('scripts', function() {
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( jshint('.jshintrc') )
     .pipe( jshint.reporter('default') )
-    .pipe( concat('scripts.min.js') )
+    .pipe( concat('main.min.js') )
     .pipe( uglify() )
     .pipe( gulp.dest(paths.scripts.dest) )
     .pipe( notify({
