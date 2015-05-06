@@ -1,2 +1,36 @@
-/dev/bower_components
-/dev/node_modules
+# Bower #
+#########
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
+
+# Node #
+########
+node_modules
+
+# Sass #
+########
+.sass-cache
+*.css.map
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
