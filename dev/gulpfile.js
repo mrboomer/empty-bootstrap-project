@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
-    reload = require('gulp-livereload'),
+    livereload = require('gulp-livereload'),
     bower = require('gulp-bower'),
     plumber = require('gulp-plumber');
 
@@ -131,12 +131,19 @@ gulp.task('images', function() {
 
 gulp.task('watch', function() {
   'use strict';
-  reload.listen();
-  gulp.watch(paths.styles.src + '**/*.scss', ['styles']).on('change', reload.changed);
-  gulp.watch(devAssets.scripts, ['scripts']).on('change', reload.changed);
-  gulp.watch(devAssets.images, ['images']).on('change', reload.changed);
+  gulp.watch(paths.styles.src + '**/*.scss', ['styles']);
+  gulp.watch(devAssets.scripts, ['scripts']);
+  gulp.watch(devAssets.images, ['images']);
+});
+
+gulp.task('reload', function() {
+  'use strict';
+  livereload.listen();
+  gulp.watch(paths.styles.dest + '**/*.*').on('change', livereload.changed);
+  gulp.watch(paths.scripts.dest + '**/*.*').on('change', livereload.changed);
+  gulp.watch(paths.images.dest + '**/*.*').on('change', livereload.changed);
 });
 
 gulp.task('setDependencies', ['jquery', 'bootstrapStyle', 'bootstrapScript']);
 
-gulp.task('default', ['styles', 'scripts', 'images', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'images', 'watch', 'reload']);
