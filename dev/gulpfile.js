@@ -16,6 +16,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber');
 
 var basePaths = {
+  index: '../',
   src: 'assets/',
   dest: './../assets/',
   bower: 'bower_components/'
@@ -139,6 +140,7 @@ gulp.task('watch', function() {
 gulp.task('reload', function() {
   'use strict';
   livereload.listen();
+  gulp.watch(basePaths.index + '*.{php,html}').on('change', livereload.changed);
   gulp.watch(paths.styles.dest + '**/*.*').on('change', livereload.changed);
   gulp.watch(paths.scripts.dest + '**/*.*').on('change', livereload.changed);
   gulp.watch(paths.images.dest + '**/*.*').on('change', livereload.changed);
