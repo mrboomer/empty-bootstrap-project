@@ -18,17 +18,23 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
+  <header>
+    <section class="container">
 
-    </div>
-  </div>
+    </section>
+  </header>
 
-  <div class="container">
-    <footer>
+  <main>
+    <section class="container">
+
+    </section>
+  </main>
+
+  <footer>
+    <section class="container">
       <p>&copy; <?php echo date("Y"); ?></p>
-    </footer>
-  </div>
+    </section>
+  </footer>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
