@@ -16,33 +16,31 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber');
 
 var basePaths = {
-  index: '../',
-  src: 'assets/',
-  dest: './../assets/',
-  bower: 'bower_components/'
-};
-
-var paths = {
-  styles: {
-    src: basePaths.src + 'scss/',
-    unminified: basePaths.src + 'css/',
-    dest: basePaths.dest + 'css/'
-  },
-  scripts: {
-    src: basePaths.src + 'js/',
-    dest: basePaths.dest + 'js/'
-  },
-  images: {
-    src: basePaths.src + 'img/',
-    dest: basePaths.dest + 'img/'
-  }
-};
-
-var devAssets = {
-  styles: paths.styles.src + 'main.scss',
-  scripts: paths.scripts.src + '**/*.js',
-  images: paths.images.src + '**/*.{png,jpg,jpeg,gif,svg}'
-};
+      index: '../',
+      src: 'assets/',
+      dest: '../assets/',
+      bower: 'bower_components/'
+    },
+    paths = {
+      styles: {
+        src: basePaths.src + 'scss/',
+        unminified: basePaths.src + 'css/',
+        dest: basePaths.dest + 'css/'
+      },
+      scripts: {
+        src: basePaths.src + 'js/',
+        dest: basePaths.dest + 'js/'
+      },
+      images: {
+        src: basePaths.src + 'img/',
+        dest: basePaths.dest + 'img/'
+      }
+    },
+    devAssets = {
+      styles: paths.styles.src + 'main.scss',
+      scripts: paths.scripts.src + '**/*.js',
+      images: paths.images.src + '**/*.{png,jpg,jpeg,gif,svg}'
+    };
 
 function onError(err) {
   'use strict';
