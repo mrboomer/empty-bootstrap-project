@@ -11,15 +11,15 @@
   </head>
 <body>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
   <!-- Google Analytics -->
   <script>
-      window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-      ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="assets/js/main.min.js"></script>
 
 </body>
